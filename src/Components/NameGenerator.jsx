@@ -7,7 +7,7 @@ export default class NameGenerator extends Component {
   };
 
   componentDidMount() {
-    //fetch names async
+    //fetch names async 
     const names = [
       "ABC",
       "DEF",
