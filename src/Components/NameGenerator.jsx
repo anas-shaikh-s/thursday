@@ -5,6 +5,7 @@ export default class NameGenerator extends Component {
     allName: [],
     exceptions: [],
   };
+
   componentDidMount() {
     //fetch names async
     const names = [
@@ -26,7 +27,8 @@ export default class NameGenerator extends Component {
   randomNames() {
     let newNamesArray = this.state.allName;
     let exceptions = this.state.exceptions;
-
+    // console.log(exceptions);
+    // console.log(exceptions);
     // for (let index = 0; index < this.state.allName.length; index++) {
     //   const name = this.state.allName[index];
     //   for (let j = 0; j < this.state.exceptions.length; j++) {
@@ -66,12 +68,14 @@ export default class NameGenerator extends Component {
     exceptions.forEach((e1) =>
       newNamesArray.forEach((e2, index) => {
         if (e1.toLowerCase() === e2.toLowerCase()) {
+          newNamesArray.splice(index, 1);
           this.setState({
-            allName: newNamesArray.splice(index, 1),
+            allName: newNamesArray,
           });
         }
       })
     );
+    console.log(this.state.allName);
 
     // newNamesArray.forEach((e1, index) =>
     //   exceptions.forEach((e2) => {
@@ -90,7 +94,6 @@ export default class NameGenerator extends Component {
 
     // }
 
-    console.log(newNamesArray);
     const randomName1 =
       newNamesArray[Math.floor(Math.random() * newNamesArray.length)];
     const filtered = newNamesArray.filter((name) => name !== randomName1);
