@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class NameGenerator extends Component {
   state = {
     allName: [],
-    exceptions: [],
+    exceptions: []
   };
 
   componentDidMount() {
