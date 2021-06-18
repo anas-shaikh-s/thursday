@@ -82,7 +82,7 @@ const Home = () => {
 
     setRandomOne(randomName1);
     setRandomTwo(randomName2);
-    setHasName(!hasName);
+    // setHasName(!hasName);
     setStart(true);
   };
 
@@ -149,7 +149,6 @@ const Home = () => {
             randomTwo={randomTwo}
             start={start}
             handleReset={handleReset}
-            hasName={hasName}
           />
         );
       default:
